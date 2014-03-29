@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "tab sort",
-  "description": "Useless extension that sorts chrome tabs by url. Created for educational purposes",
+  "description": "Chrome extension that sorts tabs by URL. Created for educational purposes.",
   "version": "1.0",
   
   "background": {
