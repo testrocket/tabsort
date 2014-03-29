@@ -1,8 +1,8 @@
+var lastURL = ""
 chrome.tabs.onUpdated.addListener(function(id, changeInfo, tab) {
-	console.log(changeInfo);
-	if (changeInfo.status === "complete") 
-	{
+	if (changeInfo.status === "complete" && lastURL !== parse(tab.url)) {
 		moveTabs()
+		lastURL = parse(tab.url);
 	}
 });
 
