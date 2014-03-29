@@ -17,8 +17,6 @@ function moveTabs() {
 			return parse(url1).localeCompare(parse(url2));
 		});
 		
-		console.log(urls);
-		
 		var tabData = [];
 		for (var i = 0; i < urls.length; i++) {
 			for (var j = 0; j < tabs.length; j++) {
@@ -29,9 +27,7 @@ function moveTabs() {
 		}
 		
 		for (var i = 0; i < tabData.length; i++) {
-			chrome.tabs.move(tabData[i].id, { index: tabData[i].index }, function(tabs) {
-				console.log('done moving');
-			});
+			chrome.tabs.move(tabData[i].id, { index: tabData[i].index }, function(tabs) {});
 		}
 	});
 }
@@ -41,7 +37,6 @@ function parse(url) {
 	var index = fixed.indexOf('/');
 	
 	index = index === -1 ? fixed.length : index;
-	
 	fixed = fixed.substring(0, index);
 	
 	index = fixed.lastIndexOf('.');
@@ -53,7 +48,5 @@ function parse(url) {
 	if (index === -1) {
 		return fixed;
 	}
-	
-	fixed = fixed.substring(index + 1);
-	return fixed;
+	return fixed.substring(index + 1);
 }
