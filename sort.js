@@ -45,8 +45,5 @@ function parse(url) {
 	}
 	
 	index = fixed.lastIndexOf('.', index - 1);
-	if (index === -1) {
-		return fixed;
-	}
-	return fixed.substring(index + 1);
+	return index === -1 ? fixed : fixed.substring(index + 1);
 }
